@@ -14,3 +14,17 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  firstpod-svc
+spec:
+  selector:
+    type: infra
+  type: NodePort
+  ports:
+  - name:  firestpod -port
+    port:  80
+    targetPort:  8080
+    nodeport: 30001 # node port range is 30,000 to 32,767 only
