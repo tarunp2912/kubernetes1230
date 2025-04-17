@@ -24,6 +24,22 @@ spec:
 
 ---
 # create service for expose
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name:  myapp-svc
+# spec:
+#   selector:
+#     app:  myapp
+#   type:  NodePort
+#   ports:
+#   - name:  myapp-port
+#     port:  80
+#     targetPort:  80
+#     nodePort: 30004
+
+# create svc with cluster ip
+
 kind: Service
 apiVersion: v1
 metadata:
@@ -31,9 +47,8 @@ metadata:
 spec:
   selector:
     app:  myapp
-  type:  NodePort
+  type:  ClusterIP
   ports:
-  - name:  myapp-port
+  - name:  http
     port:  80
     targetPort:  80
-    nodePort: 30004
