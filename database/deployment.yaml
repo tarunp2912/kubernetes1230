@@ -17,10 +17,6 @@ spec:
       containers:
       - name: mysql-app
         image: mysql:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 3306
         env:
