@@ -21,7 +21,7 @@ spec:
         - containerPort: 3306
         volumeMounts:
           - name:  sqlstorage
-            mountPath:  /var/lib/mysql
+            mountPath:  /var/lib/mysql/
         env:
         - name:  MYSQL_ROOT_PASSWORD
           value: redhat
