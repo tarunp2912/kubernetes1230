@@ -16,5 +16,5 @@ spec:
     - hard
     - nfsvers=4.1
   nfs:
-    path: /dir1/container1
-    server: 172.31.36.100
+    path: /dir/container1
+    server: 172.31.32.153
