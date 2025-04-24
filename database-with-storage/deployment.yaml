@@ -19,13 +19,6 @@ spec:
         image: mysql:latest
         ports:
         - containerPort: 3306
-        volumeMounts:
-          - name:  sqlstorage
-            mountPath:  /var/lib/mysql
-      volumes:
-      - name: sqlstorage
-        persistentVolumeClaim:
-          claimName: mysql-storage-pvc
         env:
         - name:  MYSQL_ROOT_PASSWORD
           value: redhat
@@ -33,3 +26,11 @@ spec:
           value: tarun
         - name:  MYSQL_PASSWORD
           value: redhat
+        volumeMounts:
+          - name:  sqlstorage
+            mountPath:  /var/lib/mysql
+      volumes:
+      - name: sqlstorage
+        persistentVolumeClaim:
+          claimName: mysql-storage-pvc
+        
