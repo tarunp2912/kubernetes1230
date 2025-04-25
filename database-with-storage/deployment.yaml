@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql-app
-        image: mysql:latest
+        image: nginx:latest
         ports:
         - containerPort: 3306
         volumeMounts:
