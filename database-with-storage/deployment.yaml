@@ -21,14 +21,14 @@ spec:
         - containerPort: 3306
         volumeMounts:
           - name:  sqlstorage
-            mountPath:  /var/lib/mysql/
-        env:
-        - name:  MYSQL_ROOT_PASSWORD
-          value: redhat
-        - name:  MYSQL_USER
-          value: tarun
-        - name:  MYSQL_PASSWORD
-          value: redhat
+            mountPath:  /usr/share/nginx/html/
+        # env:
+        # - name:  MYSQL_ROOT_PASSWORD
+        #   value: redhat
+        # - name:  MYSQL_USER
+        #   value: tarun
+        # - name:  MYSQL_PASSWORD
+        #   value: redhat
       volumes:
       - name: sqlstorage
         persistentVolumeClaim:
