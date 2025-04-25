@@ -22,6 +22,10 @@ spec:
         volumeMounts:
           - name:  sqlstorage
             mountPath:  /var/lib/mysql/
+      volumes:
+      - name: sqlstorage
+        persistentVolumeClaim:
+          claimName: mysql-storage-pvc   
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: redhat
@@ -29,7 +33,3 @@ spec:
           value: tarun
         - name: MYSQL_ROOT_PASSWORD
           value: redhat
-      volumes:
-      - name: sqlstorage
-        persistentVolumeClaim:
-          claimName: mysql-storage-pvc   
