@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: local-storage-app
-  namespace: databases
+  namespace: database
   labels: 
     type: local
 spec:
