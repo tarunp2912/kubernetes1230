@@ -1,20 +1,3 @@
-# kind: Service
-# apiVersion: v1
-# metadata:
-#   name:  mysql-svc
-#   namespace: database
-#   labels:
-#     app: mysql
-# spec:
-#   selector:
-#     app:  mysql
-#   type:  NodePort
-#   ports:
-#   - name:  mysql-port
-#     port:  3306
-#     targetPort:  3306
-#     nodePort: 31999
-
 kind: Service
 apiVersion: v1
 metadata:
@@ -27,7 +10,24 @@ spec:
     app:  mysql
   type:  NodePort
   ports:
-  - name:  mysql-portport
-    port:  80
-    targetPort:  80
-    nodePort: 31222
+  - name:  mysql-port
+    port:  3306
+    targetPort:  3306
+    nodePort: 31999
+
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name:  mysql-svc
+#   namespace: database
+#   labels:
+#     app: mysql
+# spec:
+#   selector:
+#     app:  mysql
+#   type:  NodePort
+#   ports:
+#   - name:  mysql-portport
+#     port:  80
+#     targetPort:  80
+#     nodePort: 31222
