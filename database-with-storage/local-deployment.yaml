@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: local-storage-app
+  namespace: databases
+  labels: 
+    type: local
+spec:
+  selector:
+    matchLabels:
+      type: local
+  template:
+    metadata:
+      labels:
+        type: local
+    spec:
+      containers:
+      - name: local-storage-app
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - name:  local-storage
+          mountPath:  /usr/share/nginx/html/
+    volumes:
+      - name: local-storage
+      persistentVolumeClaim:
+        claimName: local-pvc-claim
