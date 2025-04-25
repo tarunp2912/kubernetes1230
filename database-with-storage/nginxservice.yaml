@@ -10,8 +10,7 @@ spec:
     app:  mysql
   type:  NodePort
   ports:
-  - name:  mysql-port
-    port:  3306
-    targetPort:  3306
-    nodePort: 31999
-
+  - name:  mysql-portport
+    port:  80
+    targetPort:  80
+    nodePort: 31222
