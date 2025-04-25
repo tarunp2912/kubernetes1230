@@ -24,9 +24,9 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-          - name:  local-storage
+          - name:  storageapp
             mountPath:  /usr/share/nginx/html/
     volumes:
-      - name: local-storage
+      - name: storageapp
         persistentVolumeClaim:
           claimName: local-pvc-claim
