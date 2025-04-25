@@ -26,7 +26,7 @@ spec:
         volumeMounts:
           - name: storageapp
             mountPath: /usr/share/nginx/html/
-    volumes:
-      - name: storageapp
-        persistentVolumeClaim:
-          claimName: local-pvc-claim
+      volumes:
+        - name: storageapp
+          persistentVolumeClaim:
+            claimName: local-pvc-claim
