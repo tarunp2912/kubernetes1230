@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: local-storage-app
-  namespace: database 
-  labels:
+  namespace: database
+  labels: 
     type: local
 spec:
   selector:
@@ -24,9 +24,9 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-          - name:  storageapp
+          - name: storageapp
             mountPath: /usr/share/nginx/html/
-      volumes:
-        - name: storageapp
-          persistentVolumeClaim:
-            claimName: local-pvc-claim
+    volumes:
+      - name: storageapp
+        persistentVolumeClaim:
+          claimName: local-pvc-claim
