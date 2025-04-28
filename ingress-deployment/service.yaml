@@ -11,3 +11,18 @@ spec:
   - name:  webapp-svc-port
     port:  80
     targetPort:  80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  apache-svc
+  namespace: learning-ingress
+spec:
+  selector:
+    app:  apache
+  type:  ClusterIP
+  ports:
+  - name:  apache-svc-port
+    port:  80
+    targetPort:  80

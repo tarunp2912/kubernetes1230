@@ -19,3 +19,26 @@ spec:
             name: webapp-svc
             port: 
               number: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apache-svc-ingress
+  namespace: learning-ingress
+  labels:
+    app: apache
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/apache"
+        backend:
+          service:
+            name: apache-svc
+            port: 
+              number: 80
