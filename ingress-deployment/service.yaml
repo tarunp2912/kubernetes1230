@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  webapp-svc
+  namespace: learning-ingress
+spec:
+  selector:
+    app:  webapp
+  type:  ClusterIP
+  ports:
+  - name:  webapp-svc-port
+    port:  80
+    targetPort:  80
