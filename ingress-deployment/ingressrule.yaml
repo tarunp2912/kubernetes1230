@@ -5,6 +5,8 @@ metadata:
   namespace: learning-ingress
   labels:
     app: webapp
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
