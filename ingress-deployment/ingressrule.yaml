@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webapp-svc-ingress
+  labels:
+    app: webapp
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: <Host>
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/app"
+        backend:
+          service:
+            name: webapp-svc
+            port: 
+              number: 80
