@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: todo
-        image: abhishekbagul/todo-backend
+        image: tutum/hello-world
         ports:
         - containerPort: 3000
         env:
