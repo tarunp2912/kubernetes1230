@@ -1,0 +1,23 @@
+# -->>first install heml command
+# $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+# $ chmod 700 get_helm.sh
+# $ ./get_helm.sh
+
+# --> then add repo (search kubernetes dashboard open offial link)
+
+# run below command
+#  # helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+#  #helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+# kubectl get svc -A --> check it is runnig on cluste ip so to access it from outside edit deployment file and run on nodeport
+
+
+# kubectl edit svc kubernetes-dashboard-kong-proxy -n kubernetes-dashboard
+# add line
+  # nodePort: 31443
+  # type: NodePort
+
+  # kubectl get svc -A --> now it is runnig on nodeport
+
+  # but if you acces and then add token you can see the dashboard , but it wont show the output so you have to crete one user
+
+  

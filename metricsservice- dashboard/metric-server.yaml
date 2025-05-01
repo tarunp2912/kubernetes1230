@@ -1,0 +1,20 @@
+# kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ kubectl top node --> give error so check
+#  # kubectl get apiservice
+#   it give error like ---v1beta1.metrics.k8s.io            default/metrics-server   False (MissingEndpoints)   51s
+
+#   paste this error in chat gpt it will give soluation
+
+# edit the kubernetes-metric configuration file
+
+#  #kubectl edit deployment metrics-server -n kube-system --> add below line
+  # args:
+  # - --kubelet-insecure-tls
+
+
+# then run this command 
+
+# kubectl rollout restart deployment metric-server -n kube-system
+
+
+# kubectl top node --> you will get cpu and ram usages
