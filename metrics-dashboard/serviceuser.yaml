@@ -19,3 +19,6 @@ subjects:
 - kind: ServiceAccount
   name: tarun
   namespace: kubernetes-dashboard
+
+  # creting token
+  # kubectl -n kubernetes-dashboard create token tarun
