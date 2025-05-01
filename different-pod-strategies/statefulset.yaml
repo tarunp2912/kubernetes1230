@@ -19,9 +19,9 @@ spec:
         ports:
         - containerPort: 5432
           name: pgsql
-      env:
-        - name: POSTGRES_PASSWORD
-          value: redhat12345
+        env:
+          - name: POSTGRES_PASSWORD
+            value: redhat12345
 
 ---
 kind: Service
